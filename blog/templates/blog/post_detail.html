@@ -45,8 +45,8 @@
                             <p>{{ post.created_at }} <a href="#">작성자명 쓸 위치</a>
                             </p>
                             </hr>
-                                <img class="img-fluid rounded" src="http://placehold.it"
-                                     alt=""
+                                <img class="img-fluid rounded" src="{"
+                                     alt="">
                                 <hr>
                             </div>
                             <!-- Post categories-->
@@ -54,7 +54,7 @@
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
                         </header>
                         <!-- Preview image figure-->
-                        <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
+                        <figure class="mb-4"><img class="img-fluid rounded" src="{{ post.head_image.url }}" alt="..." /></figure>
                         <!-- Post content-->
                         <section class="mb-5">
                             <p>{{ post.content }}</p>

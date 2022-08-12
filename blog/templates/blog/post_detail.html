@@ -53,9 +53,9 @@
                             <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
                         </header>
                         <!-- Preview image figure-->
-                        {% if p.head_image %}
-                            <img class="img-fluid rounded" src="{{ p.head_image.url }}"
-                            alt="{{ post.title }} head_image">
+                        {% if post.head_image %}
+                            <img class="img-fluid rounded" src="{{ post.head_image.url }}"
+                            alt="{{ post }} head im-age">
                         {% else %}
                             <img class ="img-fluid rounded" src="http://picsum.photos/seed/{{ post.id }}/800/400"
                              alt = "random_image">

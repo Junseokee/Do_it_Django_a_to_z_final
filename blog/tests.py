@@ -11,6 +11,8 @@ class TestView(TestCase):
                                                    password='1q2w3e4r!')
         self.user_obama = User.objects.create_user(username='obama',
                                                    password='1q2w3e4r!')
+        self.user_obama.is_staff = True
+        self.user_obama.save()
 
         self.category_programming = Category.objects.create(name='programming',
                                                             slug='programming')
@@ -184,9 +186,14 @@ class TestView(TestCase):
         #로그인하지않으면 status code가 200이면 안된다.
         response = self.client.get('/blog/create_post/')
         self.assertNotEqual(response.status_code, 200)
-        #로그인을 한다.
-        self.client.login(username= 'trump', password='1q2w3e4r!')
 
+        #staff가 trump가 로그인을 한다.
+        self.client.login(username= 'trump', password='1q2w3e4r!')
+        response = self.client.get('/blog/create_post/')
+        self.assertNotEqual(response.status_code, 200)
+
+        #staff인 obama가 로그인한다.
+        self.client.login(username='obama', password='1q2w3e4r!')
         response = self.client.get('/blog/create_post/')
         self.assertEqual(response.status_code, 200)
         soup = BeautifulSoup(response.content, 'html.parser')
@@ -205,5 +212,5 @@ class TestView(TestCase):
 
         last_post = Post.objects.last()
         self.assertEqual(last_post.title, 'Post Form 만들기')
-        self.assertEqual(last_post.author.username, 'trump')
+        self.assertEqual(last_post.author.username, 'obama')
         self.assertEqual(last_post.content, 'Post Form 페이지를 만듭시다.')

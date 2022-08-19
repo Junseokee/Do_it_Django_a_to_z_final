@@ -37,7 +37,7 @@
                     {% endif %}
                     <a class="btn" href={{ p.get_absolute_url }}>
                         <h1 class="card-title h4">{{ p.title }}</h1></a>
-                    <p>Posted on{{ p.created_at }} by <a href="#">{{ p.author | upper }}</a>
+                    <p>Posted on {{ p.created_at }} by <a href="#">{{ p.author | lower }}</a>
                     {% if p.hook_text %}
                     <h6 class="text-muted">{{ p.hook_text }}</h6>
                     {% endif %}
@@ -54,7 +54,7 @@
                 </div>
                 <div class="card-footer text-muted">
                     Posted on {{ p.created_at }} by
-                    <a href="#">{{ p.author | upper }}</a>
+                    <a href="#">{{ p.author | lower }}</a>
                 </div>
             </div>
             {% endfor %}

@@ -1,18 +1,114 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>납니다</title>
+    <title>about Junseokee</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/bootstrap/css/bootstrap.min.css' %}">
+    <script src="https://kit.fontawesome.com/67a9f89250.js" crossorigin="anonymous"></script>
+    <link href="{% static '/single_pages/css/about_me.css' %}" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<nav>
-    <a href="/blog/">Blog</a>
-    <a href="/about_me/">About Me</a>
-</nav>
+{% include 'blog/navbar.html' %}
 
-<h1>hi</h1>
-<h2>hi</h2>
-<h3>hi</h3>
+<section class="margin-for-footer">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1  class="p-3 mb-2 bg-secondary text-white">안녕하세요 Junseokee입니다.</h1>
+                <br/>
+                <p class="p-3 mb-2 bg-secondary text-white">
+                    웨이트와 축구 같은 활동적인 운동과 컴퓨터 그리고 바다를 좋아합니다.<br/>
+                    데이터분석으로 돈을 벌고 싶고, 퇴근 후에는 운동을 하거나 집안 일을 하면서 지냅니다. <br/>
 
+                </p>
+                <br/>
+                <br/>
+
+                <ul>
+                    <li>Work Experience</li>
+                    <ul>
+                        <br/>
+                        <li>데이터 연구실 학부 연구생 (2021.07 ~ 2022.01)</li>
+                        <li>스마트부산아카데미 (2022.07 ~ 2022.11)</li>
+                        <br/>
+                        <br/>
+                    </ul>
+                    <li>Education</li>
+                    <br/>
+                    <ul>
+                        <li>경영정보학과 학사, 동아대학교</li>
+                        <li>김해중학교, 김해고등학교 졸업</li>
+                        <li>부산광역시 출생</li>
+                        <br/>
+                        <br/>
+                    </ul>
+                    <li>Link</li>
+                    <br/>
+                    <ul>
+                        <li>E-mail : <a class="about link" href="">weq155@gmail.com</a></li>
+                        <li>Github : <a class="about link" href="https://github.com/Junseokee">"https://github.com/Junseokee" </a></li>
+                        <li>Blog   : <a class="about link" href="https://weq155.tistory.com">"https://weq155.tistory.com/"</a></li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-fluid" src="{% static 'single_pages/images/ser.jpg'  %}">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Portfolio</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal">
+                    <img class="card-img-top" src="{% static '/single_pages/images/stairs.jpg' %}">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 1</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal">
+                    <img class="card-img-top" src="{% static '/single_pages/images/stairs.jpg' %}">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 2</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" data-toggle="modal" >
+                    <img class="card-img-top" src="{% static '/single_pages/images/stairs.jpg' %}">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 3</h5>
+                        <p>python, Django, Pandas, python-docx로 팝콘튀긴 내용을 발표했다.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div class="fixed-bottom">
+{% include 'blog/footer.html' %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
 </body>
 </html>
